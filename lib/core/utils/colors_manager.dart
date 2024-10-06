@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class ColorsManager {
-  static const String goldColor = '0xFFB7935FFF';
+  static const Color goldColor = Color(0xFFB7935F);
 }
