@@ -49,35 +49,35 @@ class _HomeScreenState extends State<HomeScreen> {
           currentIndex: selectedItem,
           items: [
             BottomNavigationBarItem(
-              backgroundColor: Theme.of(context).primaryColor,
+              backgroundColor: Theme.of(context).dividerColor,
               icon: ImageIcon(
                 AssetImage(AssetsManager.quranIcon),
               ),
               label: 'Quran',
             ),
             BottomNavigationBarItem(
-              backgroundColor: Theme.of(context).primaryColor,
+              backgroundColor: Theme.of(context).dividerColor,
               icon: ImageIcon(
                 AssetImage(AssetsManager.ahadithIcon),
               ),
               label: StringsManager.quranLabel,
             ),
             BottomNavigationBarItem(
-              backgroundColor: Theme.of(context).primaryColor,
+              backgroundColor: Theme.of(context).dividerColor,
               icon: ImageIcon(
                 AssetImage(AssetsManager.sebhaIcon),
               ),
               label: StringsManager.ahadithLabel,
             ),
             BottomNavigationBarItem(
-              backgroundColor: Theme.of(context).primaryColor,
+              backgroundColor: Theme.of(context).dividerColor,
               icon: ImageIcon(
                 AssetImage(AssetsManager.radioIcon),
               ),
               label: StringsManager.sebhaLabel,
             ),
             BottomNavigationBarItem(
-              backgroundColor: Theme.of(context).primaryColor,
+              backgroundColor: Theme.of(context).dividerColor,
               icon: Icon(
                 Icons.settings,
               ),
