@@ -13,13 +13,16 @@ class HadithHeaderName extends StatelessWidget {
       decoration: BoxDecoration(
         border: Border.symmetric(
           horizontal:
-              BorderSide(width: 4, color: Theme.of(context).dividerColor),
+          BorderSide(width: 4, color: Theme
+              .of(context)
+              .dividerColor),
         ),
       ),
       child: Text(
         StringsManager.ahadithName,
         textAlign: TextAlign.center,
-        style: Theme.of(context)
+        style: Theme
+            .of(context)
             .textTheme
             .titleSmall
             ?.copyWith(fontWeight: FontWeight.w600),

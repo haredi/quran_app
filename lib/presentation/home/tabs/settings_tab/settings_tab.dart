@@ -15,7 +15,10 @@ class SettingsTab extends StatelessWidget {
           children: [
             Text(
               'Theme',
-              style: Theme.of(context).textTheme.titleMedium,
+              style: Theme.of(context)
+                  .textTheme
+                  .bodySmall!
+                  .copyWith(fontWeight: FontWeight.w700),
             ),
             SizedBox(
               height: 4,
@@ -43,7 +46,10 @@ class SettingsTab extends StatelessWidget {
             ),
             Text(
               'Language',
-              style: Theme.of(context).textTheme.titleMedium,
+              style: Theme.of(context)
+                  .textTheme
+                  .bodySmall!
+                  .copyWith(fontWeight: FontWeight.w700),
             ),
             SizedBox(
               height: 4,
