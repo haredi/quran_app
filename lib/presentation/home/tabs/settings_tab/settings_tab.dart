@@ -38,7 +38,7 @@ class SettingsTab extends StatelessWidget {
                     style: Theme.of(context)
                         .textTheme
                         .bodySmall
-                        ?.copyWith(fontSize: 14),
+                        ?.copyWith(fontSize: 16),
                   )),
             ),
             SizedBox(
@@ -69,7 +69,7 @@ class SettingsTab extends StatelessWidget {
                     style: Theme.of(context)
                         .textTheme
                         .bodySmall
-                        ?.copyWith(fontSize: 14),
+                        ?.copyWith(fontSize: 16),
                   )),
             ),
           ],

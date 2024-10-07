@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       initialRoute: RoutesManager.splashRoute,
       theme: MyTheme.lightTheme,
       darkTheme: MyTheme.darkTheme,
-      themeMode: ThemeMode.dark,
+      themeMode: ThemeMode.light,
     );
   }
 }

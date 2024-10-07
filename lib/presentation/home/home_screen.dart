@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:quran_app/core/utils/assets_manager.dart';
 import 'package:quran_app/core/utils/strings_manager.dart';
 import 'package:quran_app/presentation/home/tabs/ahadith_tab/ahadith_tab.dart';
