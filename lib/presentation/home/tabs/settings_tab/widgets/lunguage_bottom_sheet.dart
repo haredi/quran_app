@@ -19,15 +19,10 @@ class LanguageBottomSheet extends StatelessWidget {
               ),
               Icon(
                 Icons.check,
-                size: 30,
-                color: Theme.of(context).dividerColor,
               ),
             ],
           ),
-          Text('Arabic',
-              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                    color: Colors.black,
-                  )),
+          Text('Arabic', style: Theme.of(context).textTheme.bodyLarge),
         ],
       ),
     );
