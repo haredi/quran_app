@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:quran_app/core/utils/assets_manager.dart';
 import 'package:quran_app/core/utils/strings_manager.dart';
 import 'package:quran_app/presentation/home/tabs/ahadith_tab/ahadith_tab.dart';
@@ -40,50 +39,50 @@ class _HomeScreenState extends State<HomeScreen> {
         appBar: AppBar(
           title: Text(StringsManager.appTitle),
         ),
-        bottomNavigationBar: BottomNavigationBar(
-          onTap: (index) {
-            setState(() {
-              selectedItem = index;
-            });
-          },
-          currentIndex: selectedItem,
-          items: [
-            BottomNavigationBarItem(
-              backgroundColor: Theme.of(context).dividerColor,
-              icon: ImageIcon(
-                AssetImage(AssetsManager.quranIcon),
+        bottomNavigationBar: Theme(
+          data: Theme.of(context).copyWith(
+            canvasColor: Theme.of(context).primaryColor,
+          ),
+          child: BottomNavigationBar(
+            onTap: (index) {
+              setState(() {
+                selectedItem = index;
+              });
+            },
+            currentIndex: selectedItem,
+            items: [
+              BottomNavigationBarItem(
+                icon: ImageIcon(
+                  AssetImage(AssetsManager.quranIcon),
+                ),
+                label: StringsManager.quranLabel,
               ),
-              label: 'Quran',
-            ),
-            BottomNavigationBarItem(
-              backgroundColor: Theme.of(context).dividerColor,
-              icon: ImageIcon(
-                AssetImage(AssetsManager.ahadithIcon),
+              BottomNavigationBarItem(
+                icon: ImageIcon(
+                  AssetImage(AssetsManager.ahadithIcon),
+                ),
+                label: StringsManager.ahadithLabel,
               ),
-              label: StringsManager.quranLabel,
-            ),
-            BottomNavigationBarItem(
-              backgroundColor: Theme.of(context).dividerColor,
-              icon: ImageIcon(
-                AssetImage(AssetsManager.sebhaIcon),
+              BottomNavigationBarItem(
+                icon: ImageIcon(
+                  AssetImage(AssetsManager.sebhaIcon),
+                ),
+                label: StringsManager.sebhaLabel,
               ),
-              label: StringsManager.ahadithLabel,
-            ),
-            BottomNavigationBarItem(
-              backgroundColor: Theme.of(context).dividerColor,
-              icon: ImageIcon(
-                AssetImage(AssetsManager.radioIcon),
+              BottomNavigationBarItem(
+                icon: ImageIcon(
+                  AssetImage(AssetsManager.radioIcon),
+                ),
+                label: StringsManager.radioLabel,
               ),
-              label: StringsManager.sebhaLabel,
-            ),
-            BottomNavigationBarItem(
-              backgroundColor: Theme.of(context).dividerColor,
-              icon: Icon(
-                Icons.settings,
+              BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.settings,
+                ),
+                label: StringsManager.settingsLabel,
               ),
-              label: StringsManager.settingsLabel,
-            ),
-          ],
+            ],
+          ),
         ),
         body: tabs[selectedItem],
       ),

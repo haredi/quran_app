@@ -16,15 +16,10 @@ class ThemeBottomSheet extends StatelessWidget {
               Text('Light', style: Theme.of(context).textTheme.bodyMedium),
               Icon(
                 Icons.check,
-                size: 30,
-                color: Theme.of(context).dividerColor,
               ),
             ],
           ),
-          Text('Dark',
-              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                    color: Colors.black,
-                  )),
+          Text('Dark', style: Theme.of(context).textTheme.bodyLarge),
         ],
       ),
     );

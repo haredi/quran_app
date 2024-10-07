@@ -13,7 +13,7 @@ class VersesWidget extends StatelessWidget {
         child: Text(
           verseItem,
           textAlign: TextAlign.center,
-          style: Theme.of(context).textTheme.titleSmall?.copyWith(fontSize: 20),
+          style: Theme.of(context).textTheme.bodySmall,
         ),
       ),
     );
