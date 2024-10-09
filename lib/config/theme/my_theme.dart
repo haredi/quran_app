@@ -8,7 +8,11 @@ class MyTheme {
       color: ColorsManager.goldColor,
       size: 30,
     ),
-    colorScheme: ColorScheme.fromSeed(seedColor: ColorsManager.goldColor),
+    colorScheme: ColorScheme.fromSeed(
+      seedColor: ColorsManager.goldColor,
+      primary: ColorsManager.goldColor,
+      secondary: ColorsManager.goldColor,
+    ),
     scaffoldBackgroundColor: Colors.transparent,
     useMaterial3: true,
     appBarTheme: const AppBarTheme(
@@ -62,9 +66,10 @@ class MyTheme {
       size: 30,
     ),
     colorScheme: ColorScheme.fromSeed(
-        seedColor: ColorsManager.yellowColor,
-        primary: ColorsManager.darkBlue,
-        onPrimary: Colors.yellow),
+      seedColor: ColorsManager.goldColor,
+      primary: ColorsManager.goldColor,
+      secondary: Colors.white,
+    ),
     scaffoldBackgroundColor: Colors.transparent,
     useMaterial3: true,
     appBarTheme: const AppBarTheme(
