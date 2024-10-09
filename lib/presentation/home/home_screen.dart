@@ -6,6 +6,7 @@ import 'package:quran_app/presentation/home/tabs/quran_tab/quran_tab.dart';
 import 'package:quran_app/presentation/home/tabs/radio_tab/radio_tab.dart';
 import 'package:quran_app/presentation/home/tabs/sebha_tab/sebha_tab.dart';
 import 'package:quran_app/presentation/home/tabs/settings_tab/settings_tab.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({super.key});
@@ -37,7 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       child: Scaffold(
         appBar: AppBar(
-          title: Text(StringsManager.appTitle),
+          title: Text(AppLocalizations.of(context)!.apptitle),
         ),
         bottomNavigationBar: Theme(
           data: Theme.of(context).copyWith(
@@ -55,31 +56,31 @@ class _HomeScreenState extends State<HomeScreen> {
                 icon: ImageIcon(
                   AssetImage(AssetsManager.quranIcon),
                 ),
-                label: StringsManager.quranLabel,
+                label: AppLocalizations.of(context)!.qurqnTab,
               ),
               BottomNavigationBarItem(
                 icon: ImageIcon(
                   AssetImage(AssetsManager.ahadithIcon),
                 ),
-                label: StringsManager.ahadithLabel,
+                label: AppLocalizations.of(context)!.ahadithTab,
               ),
               BottomNavigationBarItem(
                 icon: ImageIcon(
                   AssetImage(AssetsManager.sebhaIcon),
                 ),
-                label: StringsManager.sebhaLabel,
+                label: AppLocalizations.of(context)!.sebhaTab,
               ),
               BottomNavigationBarItem(
                 icon: ImageIcon(
                   AssetImage(AssetsManager.radioIcon),
                 ),
-                label: StringsManager.radioLabel,
+                label: AppLocalizations.of(context)!.radioTab,
               ),
               BottomNavigationBarItem(
                 icon: Icon(
                   Icons.settings,
                 ),
-                label: StringsManager.settingsLabel,
+                label: AppLocalizations.of(context)!.settingsTab,
               ),
             ],
           ),
