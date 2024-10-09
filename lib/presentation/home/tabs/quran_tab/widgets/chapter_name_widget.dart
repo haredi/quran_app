@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/strings_manager.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ChapterName extends StatelessWidget {
   const ChapterName({super.key});
@@ -24,7 +25,7 @@ class ChapterName extends StatelessWidget {
           children: [
             Expanded(
               child: Text(
-                StringsManager.chapterName,
+                AppLocalizations.of(context)!.chapterName,
                 textAlign: TextAlign.center,
                 style: Theme.of(context)
                     .textTheme
@@ -39,7 +40,7 @@ class ChapterName extends StatelessWidget {
             ),
             Expanded(
               child: Text(
-                StringsManager.versesNum,
+                AppLocalizations.of(context)!.varsesNubmber,
                 textAlign: TextAlign.center,
                 style: Theme.of(context)
                     .textTheme

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/strings_manager.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HadithHeaderName extends StatelessWidget {
   const HadithHeaderName({super.key});
@@ -13,16 +14,13 @@ class HadithHeaderName extends StatelessWidget {
       decoration: BoxDecoration(
         border: Border.symmetric(
           horizontal:
-          BorderSide(width: 4, color: Theme
-              .of(context)
-              .dividerColor),
+              BorderSide(width: 4, color: Theme.of(context).dividerColor),
         ),
       ),
       child: Text(
-        StringsManager.ahadithName,
+        AppLocalizations.of(context)!.elahadith,
         textAlign: TextAlign.center,
-        style: Theme
-            .of(context)
+        style: Theme.of(context)
             .textTheme
             .titleSmall
             ?.copyWith(fontWeight: FontWeight.w600),
