@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:quran_app/presentation/home/tabs/settings_tab/widgets/lunguage_bottom_sheet.dart';
 import 'package:quran_app/presentation/home/tabs/settings_tab/widgets/theme_bottom_sheet.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:quran_app/provider/settings_provider.dart';
 
 class SettingsTab extends StatelessWidget {
   const SettingsTab({super.key});
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<SettingsProvider>(context);
     return Container(
       child: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -36,7 +39,9 @@ class SettingsTab extends StatelessWidget {
                           width: 2),
                       borderRadius: BorderRadius.circular(12)),
                   child: Text(
-                    AppLocalizations.of(context)!.light,
+                    provider.currentTheme == ThemeMode.light
+                        ? AppLocalizations.of(context)!.light
+                        : AppLocalizations.of(context)!.dark,
                     style: Theme.of(context)
                         .textTheme
                         .bodySmall
@@ -68,7 +73,9 @@ class SettingsTab extends StatelessWidget {
                           width: 2),
                       borderRadius: BorderRadius.circular(12)),
                   child: Text(
-                    AppLocalizations.of(context)!.english,
+                    provider.currentLang == 'en'
+                        ? AppLocalizations.of(context)!.english
+                        : AppLocalizations.of(context)!.arabic,
                     style: Theme.of(context)
                         .textTheme
                         .bodySmall

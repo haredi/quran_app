@@ -32,9 +32,10 @@ class MyTheme {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
         margin: EdgeInsets.symmetric(vertical: 3, horizontal: 12)),
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+      unselectedIconTheme: IconThemeData(size: 35),
       selectedItemColor: Colors.black,
       unselectedItemColor: Colors.white,
-      selectedIconTheme: IconThemeData(size: 35),
+      selectedIconTheme: IconThemeData(size: 40),
       showSelectedLabels: true,
       showUnselectedLabels: false,
       elevation: 20,
@@ -47,6 +48,8 @@ class MyTheme {
     dividerColor: ColorsManager.goldColor,
     primaryColor: ColorsManager.goldColor,
     textTheme: TextTheme(
+      titleMedium: TextStyle(
+          fontSize: 25, fontWeight: FontWeight.w600, color: Colors.black),
       titleSmall: TextStyle(
           fontSize: 24, fontWeight: FontWeight.w400, color: Colors.black),
       bodySmall: TextStyle(
@@ -106,6 +109,10 @@ class MyTheme {
     dividerColor: ColorsManager.yellowColor,
     primaryColor: ColorsManager.darkBlue,
     textTheme: TextTheme(
+        titleMedium: TextStyle(
+            fontSize: 25,
+            fontWeight: FontWeight.w600,
+            color: ColorsManager.yellowColor),
         titleSmall: TextStyle(
             fontSize: 24, fontWeight: FontWeight.w400, color: Colors.white),
         bodyLarge: TextStyle(
