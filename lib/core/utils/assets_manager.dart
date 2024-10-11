@@ -7,6 +7,14 @@ class AssetsManager {
   static const String sebhaIcon = 'assets/images/sebha_icon.png';
   static const String radioIcon = 'assets/images/radio_icon.png';
   static const String quranHeaderImage = 'assets/images/quran_header_image.png';
+  static const String lightBodySebhaImage =
+      'assets/images/light_body_of_seb7a.png';
+  static const String lightHeadSebhaImage =
+      'assets/images/light_head_of_seb7a.png';
+  static const String darkBodySebhaImage =
+      'assets/images/dark_body_of_seb7a.png';
+  static const String darkHeadSebhaImage =
+      'assets/images/dark_head_of_seb7a.png';
   static const String hadithHeaderImage =
       'assets/images/hadith_header_image.png';
 }
