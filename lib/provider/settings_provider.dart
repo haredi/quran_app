@@ -20,8 +20,19 @@ class SettingsProvider extends ChangeNotifier {
 
   void changeAppLanguage(String newLang) {
     if (currentLang == newLang) return;
-
     currentLang = newLang;
     notifyListeners();
+  }
+
+  String getBodySebhaImage() {
+    return currentTheme == ThemeMode.light
+        ? AssetsManager.lightBodySebhaImage
+        : AssetsManager.darkBodySebhaImage;
+  }
+
+  String getHeadSebhaImage() {
+    return currentTheme == ThemeMode.light
+        ? AssetsManager.lightHeadSebhaImage
+        : AssetsManager.darkHeadSebhaImage;
   }
 }
