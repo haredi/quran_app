@@ -48,6 +48,8 @@ class MyTheme {
     dividerColor: ColorsManager.goldColor,
     primaryColor: ColorsManager.goldColor,
     textTheme: TextTheme(
+      displaySmall: TextStyle(
+          fontSize: 24, fontWeight: FontWeight.w400, color: Colors.white),
       titleMedium: TextStyle(
           fontSize: 25, fontWeight: FontWeight.w600, color: Colors.black),
       titleSmall: TextStyle(
@@ -96,7 +98,8 @@ class MyTheme {
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       selectedItemColor: ColorsManager.yellowColor,
       unselectedItemColor: Colors.white,
-      selectedIconTheme: IconThemeData(size: 35),
+      unselectedIconTheme: IconThemeData(size: 35),
+      selectedIconTheme: IconThemeData(size: 40),
       showSelectedLabels: true,
       showUnselectedLabels: false,
       elevation: 20,
@@ -109,6 +112,8 @@ class MyTheme {
     dividerColor: ColorsManager.yellowColor,
     primaryColor: ColorsManager.darkBlue,
     textTheme: TextTheme(
+        displaySmall: TextStyle(
+            fontSize: 18, fontWeight: FontWeight.w400, color: Colors.black),
         titleMedium: TextStyle(
             fontSize: 25,
             fontWeight: FontWeight.w600,

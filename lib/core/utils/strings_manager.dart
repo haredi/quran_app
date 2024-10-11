@@ -8,4 +8,8 @@ class StringsManager {
   static const String sebhaLabel = 'Sebha';
   static const String radioLabel = 'Radio';
   static const String settingsLabel = 'Setting';
+  static const String tasbehNum = 'عدد التسبحات';
+  static const String sbhanAlla = 'سبحان الله';
+  static const String alhmdulla = 'الحمدلله';
+  static const String allauqbr = 'الله اكبر';
 }
