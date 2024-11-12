@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
+import 'package:quran_app/provider/lang_provider.dart';
 import 'package:quran_app/provider/settings_provider.dart';
 
 class LanguageBottomSheet extends StatefulWidget {
@@ -13,7 +14,7 @@ class LanguageBottomSheet extends StatefulWidget {
 class _LanguageBottomSheetState extends State<LanguageBottomSheet> {
   @override
   Widget build(BuildContext context) {
-    var provider = Provider.of<SettingsProvider>(context);
+    var langProvider = Provider.of<LangProvider>(context);
     return Container(
       padding: EdgeInsets.all(12),
       child: Column(
@@ -21,9 +22,9 @@ class _LanguageBottomSheetState extends State<LanguageBottomSheet> {
         children: [
           InkWell(
               onTap: () {
-                provider.changeAppLanguage('en');
+                langProvider.updateAppLang('en');
               },
-              child: provider.currentLang == 'en'
+              child: langProvider.isEnglish()
                   ? buildSelectedLanguage(AppLocalizations.of(context)!.english)
                   : buildUnSelectedLanguage(
                       AppLocalizations.of(context)!.english)),
@@ -32,9 +33,9 @@ class _LanguageBottomSheetState extends State<LanguageBottomSheet> {
           ),
           InkWell(
               onTap: () {
-                provider.changeAppLanguage('ar');
+                langProvider.updateAppLang('ar');
               },
-              child: provider.currentLang == 'ar'
+              child: langProvider.isArabic()
                   ? buildSelectedLanguage(AppLocalizations.of(context)!.arabic)
                   : buildUnSelectedLanguage(
                       AppLocalizations.of(context)!.arabic)),

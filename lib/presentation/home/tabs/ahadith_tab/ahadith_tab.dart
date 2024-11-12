@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
 import 'package:quran_app/core/utils/assets_manager.dart';
 import 'package:quran_app/core/utils/strings_manager.dart';
 import 'package:quran_app/presentation/home/tabs/ahadith_tab/widgets/hadith_header_name.dart';
 import 'package:quran_app/presentation/home/tabs/ahadith_tab/widgets/hadith_title_widget.dart';
+import 'package:quran_app/provider/hadith_provider.dart';
 
 class AhadithTab extends StatefulWidget {
   AhadithTab({super.key});
@@ -13,45 +15,35 @@ class AhadithTab extends StatefulWidget {
 }
 
 class _AhadithTabState extends State<AhadithTab> {
-  List<HadithItem> allHadithItem = [];
-
   @override
   Widget build(BuildContext context) {
-    if (allHadithItem.isEmpty) readHadithFile();
-    return Container(
-      child: Column(children: [
-        Expanded(flex: 1, child: Image.asset(AssetsManager.hadithHeaderImage)),
-        HadithHeaderName(),
-        Expanded(
-          flex: 3,
-          child: ListView.separated(
-            separatorBuilder: (context, index) => Container(
-              margin: EdgeInsets.symmetric(horizontal: 30),
-              color: Theme.of(context).dividerColor,
-              height: 2,
-            ),
-            itemBuilder: (context, index) =>
-                HadithTitlWidget(hadith: allHadithItem[index]),
-            itemCount: allHadithItem.length,
-          ),
+    return Column(children: [
+      Expanded(flex: 1, child: Image.asset(AssetsManager.hadithHeaderImage)),
+      HadithHeaderName(),
+      ChangeNotifierProvider(
+        create: (context) => HadithProvider(),
+        child: Consumer<HadithProvider>(
+          builder: (context, value, _) {
+            var hadithProvider = Provider.of<HadithProvider>(context);
+            if (hadithProvider.allHadithList.isEmpty)
+              hadithProvider.readHadithFile();
+            return Expanded(
+              flex: 3,
+              child: ListView.separated(
+                separatorBuilder: (context, index) => Container(
+                  margin: EdgeInsets.symmetric(horizontal: 30),
+                  color: Theme.of(context).dividerColor,
+                  height: 2,
+                ),
+                itemBuilder: (context, index) => HadithTitlWidget(
+                    hadith: hadithProvider.allHadithList[index]),
+                itemCount: hadithProvider.allHadithList.length,
+              ),
+            );
+          },
         ),
-      ]),
-    );
-  }
-
-  void readHadithFile() async {
-    String fileContent =
-        await rootBundle.loadString('assets/files/ahadeth.txt');
-    List<String> hadithItemList = fileContent.split('#');
-    for (var hadith in hadithItemList) {
-      List<String> hadithLines = hadith.trim().split('\n');
-      String title = hadithLines[0];
-      hadithLines.removeAt(0);
-      String content = hadithLines.join('\n');
-      HadithItem hadithItem = HadithItem(title: title, content: content);
-      allHadithItem.add(hadithItem);
-    }
-    setState(() {});
+      ),
+    ]);
   }
 }
 

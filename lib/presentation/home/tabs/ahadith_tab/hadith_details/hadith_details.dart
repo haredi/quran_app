@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:quran_app/core/utils/assets_manager.dart';
 import 'package:quran_app/presentation/home/tabs/ahadith_tab/ahadith_tab.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:quran_app/provider/theme_provider.dart';
 
 import '../../../../../provider/settings_provider.dart';
 
@@ -11,14 +12,14 @@ class HadithDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var provider = Provider.of<SettingsProvider>(context);
+    var themeProvider = Provider.of<ThemeProvider>(context);
 
     HadithItem hadith =
         ModalRoute.of(context)?.settings.arguments as HadithItem;
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage(provider.getBackgroundImage()),
+          image: AssetImage(themeProvider.getBackgroundImage()),
           fit: BoxFit.fill,
         ),
       ),

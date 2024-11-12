@@ -10,6 +10,7 @@ import 'package:quran_app/presentation/home/tabs/settings_tab/settings_tab.dart'
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:quran_app/provider/sebha_provider.dart';
 import 'package:quran_app/provider/settings_provider.dart';
+import 'package:quran_app/provider/theme_provider.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({super.key});
@@ -22,8 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
   List<Widget> tabs = [
     QuranTab(),
     AhadithTab(),
-    ChangeNotifierProvider(
-        create: (context) => SebhaProvider(), child: SebhaTab()),
+    SebhaTab(),
     RadioTab(),
     SettingsTab(),
   ];
@@ -32,11 +32,12 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    var provider = Provider.of<SettingsProvider>(context);
+    var themeProvider = Provider.of<ThemeProvider>(context);
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-            image: AssetImage(provider.getBackgroundImage()), fit: BoxFit.fill),
+            image: AssetImage(themeProvider.getBackgroundImage()),
+            fit: BoxFit.fill),
       ),
       child: Scaffold(
         appBar: AppBar(

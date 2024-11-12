@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
+import 'package:quran_app/provider/lang_provider.dart';
 import 'package:quran_app/provider/settings_provider.dart';
+import 'package:quran_app/provider/theme_provider.dart';
 
 class ThemeBottomSheet extends StatefulWidget {
   const ThemeBottomSheet({super.key});
@@ -13,7 +15,7 @@ class ThemeBottomSheet extends StatefulWidget {
 class _ThemeBottomSheetState extends State<ThemeBottomSheet> {
   @override
   Widget build(BuildContext context) {
-    var provider = Provider.of<SettingsProvider>(context);
+    var themeProvider = Provider.of<ThemeProvider>(context);
     return Container(
       padding: EdgeInsets.all(12),
       child: Column(
@@ -21,9 +23,9 @@ class _ThemeBottomSheetState extends State<ThemeBottomSheet> {
         children: [
           InkWell(
               onTap: () {
-                provider.changeAppTheme(ThemeMode.light);
+                themeProvider.updateAppTheme(ThemeMode.light);
               },
-              child: provider.currentTheme == ThemeMode.light
+              child: themeProvider.isLightTheme()
                   ? buildSelectedThemeItem(AppLocalizations.of(context)!.light)
                   : buildUnSelectedThemeItem(
                       AppLocalizations.of(context)!.light)),
@@ -32,9 +34,9 @@ class _ThemeBottomSheetState extends State<ThemeBottomSheet> {
           ),
           InkWell(
               onTap: () {
-                provider.changeAppTheme(ThemeMode.dark);
+                themeProvider.updateAppTheme(ThemeMode.dark);
               },
-              child: provider.currentTheme == ThemeMode.dark
+              child: themeProvider.isDarkTheme()
                   ? buildSelectedThemeItem(AppLocalizations.of(context)!.dark)
                   : buildUnSelectedThemeItem(
                       AppLocalizations.of(context)!.dark)),
