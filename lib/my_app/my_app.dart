@@ -9,13 +9,17 @@ import 'package:quran_app/presentation/home/tabs/quran_tab/widgets/quran_details
 import 'package:quran_app/presentation/splash/splash_screen.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:quran_app/provider/settings_provider.dart';
+import 'package:quran_app/provider/theme_provider.dart';
+
+import '../provider/lang_provider.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    var provider = Provider.of<SettingsProvider>(context, listen: true);
+    var themeProvider = Provider.of<ThemeProvider>(context);
+    var langProvider = Provider.of<LangProvider>(context);
     return MaterialApp(
         localizationsDelegates: [
           AppLocalizations.delegate, // Add this line
@@ -27,7 +31,7 @@ class MyApp extends StatelessWidget {
           Locale('en'), // English
           Locale('ar'), // Spanish
         ],
-        locale: Locale(provider.currentLang),
+        locale: Locale(langProvider.currentLang),
         debugShowCheckedModeBanner: false,
         routes: {
           RoutesManager.homeRoute: (_) => HomeScreen(),
@@ -38,6 +42,6 @@ class MyApp extends StatelessWidget {
         initialRoute: RoutesManager.splashRoute,
         theme: MyTheme.lightTheme,
         darkTheme: MyTheme.darkTheme,
-        themeMode: provider.currentTheme);
+        themeMode: themeProvider.currentTheme);
   }
 }
